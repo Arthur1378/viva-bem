@@ -1,6 +1,5 @@
 # ============================================================
 # ARQUIVO: analise_nutricional_personalizada.py
-# AUTOR: ChatGPT (para Arthur)
 # OBJETIVO: Gerar gráficos personalizados de análise nutricional
 # ============================================================
 
@@ -221,3 +220,4 @@ print("""
 5. 📊 Visão Geral - TOP 10 alimentos mais balanceados
 🎯 Pronto para relatórios de nutrição personalizada!
 """)
+
