@@ -1,18 +1,18 @@
-# 🥗 Migração para Formato Parquet — Resumo das Melhorias
+#🥗 Migração para Formato Parquet — Resumo das Melhorias
 
-## 🎯 Objetivo
+##🎯 Objetivo
 Conversão do arquivo **food.csv** (base de dados nutricionais) para o formato *Parquet, com foco em **otimizar desempenho, **reduzir o uso de armazenamento* e *melhorar a eficiência* das análises de alimentos.
 
 ---
 
-## 📊 Resultados da Conversão
+##📊 Resultados da Conversão
 
 ### Compressão Alcançada
 - *Total CSV:* 4.82 MB  
 - *Total Parquet:* 0.97 MB  
 - *Redução:* ~79.9% no tamanho do arquivo  
 
-### Arquivo Convertido
+###Arquivo Convertido
 | Arquivo | Tamanho CSV | Tamanho Parquet | Redução |
 |----------|--------------|----------------|----------|
 | food.parquet | 4.82 MB | 0.97 MB | *79.9%* |
