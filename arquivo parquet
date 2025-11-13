@@ -1,4 +1,4 @@
-#🥗 Migração para Formato Parquet — Resumo das Melhorias
+# 🥗 Migração para Formato Parquet — Resumo das Melhorias
 
 ##🎯 Objetivo
 Conversão do arquivo **food.csv** (base de dados nutricionais) para o formato *Parquet, com foco em **otimizar desempenho, **reduzir o uso de armazenamento* e *melhorar a eficiência* das análises de alimentos.
