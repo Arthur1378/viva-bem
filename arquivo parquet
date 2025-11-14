@@ -1,81 +1,93 @@
-# 🥗 Migração para Formato Parquet — Resumo das Melhorias
+🥗 Migração para Formato Parquet — Resumo das Melhorias
+🎯 Objetivo
 
-##🎯 Objetivo
-Conversão do arquivo **food.csv** (base de dados nutricionais) para o formato *Parquet, com foco em **otimizar desempenho, **reduzir o uso de armazenamento* e *melhorar a eficiência* das análises de alimentos.
+Conversão do arquivo food.csv (base de dados nutricionais) para o formato Parquet, com foco em otimizar desempenho, reduzir o uso de armazenamento e melhorar a eficiência das análises.
 
----
+📊 Resultados da Conversão
+📉 Compressão Alcançada
 
-##📊 Resultados da Conversão
+Total CSV: 4.82 MB
 
-### Compressão Alcançada
-- *Total CSV:* 4.82 MB  
-- *Total Parquet:* 0.97 MB  
-- *Redução:* ~79.9% no tamanho do arquivo  
+Total Parquet: 0.97 MB
 
-###Arquivo Convertido
-| Arquivo | Tamanho CSV | Tamanho Parquet | Redução |
-|----------|--------------|----------------|----------|
-| food.parquet | 4.82 MB | 0.97 MB | *79.9%* |
+Redução: ~79.9% no tamanho do arquivo
 
----
+📁 Arquivo Convertido
+Arquivo	Tamanho CSV	Tamanho Parquet	Redução
+food.parquet	4.82 MB	0.97 MB	79.9%
+🚀 Benefícios da Migração
+⚡ Performance
 
-## 🚀 Benefícios da Migração
+Leitura muito mais rápida (formato colunar)
 
-### ⚡ Performance
-- Leitura *muito mais rápida* (formato colunar otimizado para análise de dados)
-- Menor uso de *memória RAM*
-- Preservação automática de *tipos de dados* (sem conversões manuais)
+Menor uso de memória RAM
 
-### 💾 Eficiência de Armazenamento
-- *~80% de economia* de espaço
-- Compressão nativa *Snappy*: rápida e eficiente
+Preservação automática dos tipos de dados
 
-### 🔗 Compatibilidade
-- Suporte nativo no *Pandas*: pd.read_parquet()
-- Compatível com *Streamlit, **Power BI, **Spark, **Polars* e outras ferramentas
-- Nenhuma quebra de código — apenas substituição de read_csv() por read_parquet()
+💾 Eficiência de Armazenamento
 
----
+~80% de economia de espaço
 
-## 🔧 Alterações Implementadas
+Compressão nativa Snappy
 
-### 1. Script de Conversão (convert_to_parquet.py)
-- Automatiza a conversão CSV → Parquet  
-- Exibe estatísticas de compressão e tempo de leitura  
-- Trata erros e gera relatório de sucesso  
+🔗 Compatibilidade
 
-### 2. Atualização do Processamento
-- Alterado de pd.read_csv() para pd.read_parquet()  
-- Removidas conversões desnecessárias de tipo  
-- Leitura seletiva de colunas para análises mais rápidas  
+pd.read_parquet()
 
-### 3. Validação
-- ✅ Dados e tipos preservados  
-- ✅ Gráficos e análises funcionando corretamente  
-- ✅ Integração mantida com as análises por usuário (Mariana, Ana, Carlos e Roberto)
+Funciona com Streamlit, Power BI, Spark, Polars
 
----
+Sem alterações grandes: basta substituir read_csv → read_parquet
 
-## 📈 Impacto na Performance
-- *Tempo de carregamento:* até *4x mais rápido*  
-- *Uso de RAM:* reduzido significativamente  
-- *I/O de disco:* ~80% menos operações de leitura  
+🔧 Alterações Implementadas
+1. Script de Conversão — convert_to_parquet.py
 
----
+Conversão automática CSV → Parquet
 
-## 🔄 Como Usar
+Estatísticas de compressão
 
-### Processar os dados
-```python
+Tratamento de erros e logs
+
+2. Atualização do Processamento
+
+Leitura otimizada com pd.read_parquet()
+
+Remoção de conversões desnecessárias
+
+Suporte à leitura seletiva de colunas
+
+3. Validação
+
+✔ Dados íntegros
+
+✔ Tipos preservados
+
+✔ Gráficos funcionando
+
+✔ Total compatibilidade com análises de Mariana, Ana, Carlos e Roberto
+
+📈 Impacto na Performance
+
+Até 4× mais rápido para carregar o dataset
+
+Menos uso de RAM
+
+80% menos operações de leitura no disco
+
+🔄 Como Usar
+Importar o Parquet
 import pandas as pd
+
 df = pd.read_parquet("food.parquet")
-# Exemplo: top 10 alimentos por proteína
+
+# Exemplo: Top 10 alimentos por proteína
 top_alimentos = df.nlargest(10, "proteina")
 print(top_alimentos)
 
+Rodar o script de conversão
 python convert_to_parquet.py
 
 🎉 Conclusão
 
-A migração do dataset food.csv → food.parquet foi 100% bem-sucedida, mantendo a integridade dos dados e todas as análises existentes.
-O novo formato oferece melhor desempenho, menor uso de armazenamento e maior compatibilidade com ferramentas de ciência de dados e visualização.
+A migração do arquivo food.csv → food.parquet foi concluída com sucesso, mantendo a integridade dos dados e entregando melhorias significativas de performance e armazenamento.
+
+O novo formato é mais eficiente, mais rápido e totalmente compatível com ferramentas modernas de análise.
